@@ -7,14 +7,14 @@
 
 /* ─── tokens ─────────────────────────────────────────────────── */
 :root {
-  --bg:        #422006;
-  --bg-mid:    #713f12;
-  --bg-card:   #78350f;
-  --border:    #eab308;
-  --text:      #fefce8;
-  --text-muted:#fef08a;
-  --accent:    #facc15;
-  --accent-hover: #fde047;
+  --bg:        #431407;
+  --bg-mid:    #7c2d12;
+  --bg-card:   #9a3412;
+  --border:    #f97316;
+  --text:      #fff7ed;
+  --text-muted:#fed7aa;
+  --accent:    #f97316;
+  --accent-hover: #fb923c;
   --radius:    10px;
   --max-w:     760px;
   --font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -97,7 +97,7 @@ a {
 .cta {
   display: inline-block;
   background: var(--accent);
-  color: #422006;
+  color: #431407;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.04em;
