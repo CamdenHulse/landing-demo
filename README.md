@@ -9,8 +9,10 @@ real terminal, real editor, real workflow — no desk required.
 
 ## what this repo is
 
-a minimal, static landing page for treena. no frameworks, no build step, no
-dependencies. just `index.html` and `style.css`. loads instantly on mobile data.
+a static landing page for treena. no frameworks, no build step, no
+dependencies — just `index.html` and `style.css`. zero external network
+requests (system fonts, a css-only product visual, an inline-svg favicon), so
+it still loads instantly on mobile data.
 
 ---
 
@@ -44,8 +46,10 @@ then open the url printed in the terminal (usually `http://localhost:3000`).
 
 ```
 landing-demo/
-├── index.html   # page markup — header, hero, features, manifesto, footer
-├── style.css    # all styles — tokens, layout, components, one breakpoint at 600px
+├── index.html   # page markup — header/nav, hero + terminal, features, how it
+│                #   works, social proof, manifesto, faq, signup, footer
+├── style.css    # all styles — tokens, layout, components, breakpoints at
+│                #   600px and 760px, motion + reduced-motion blocks
 └── README.md    # this file
 ```
 
@@ -53,14 +57,26 @@ landing-demo/
 
 ## design decisions
 
-- **color palette** — near-black `#0d0d0d` background, warm off-white `#f0ede8`
-  text, acid-green `#c8f04d` accent. high contrast, readable on any screen.
-- **typography** — system font stack. `clamp()` for fluid headline sizing.
-  no external font requests.
-- **layout** — single centered column, `max-width: 760px`. feature cards stack
-  vertically on mobile and shift to a three-column grid at 600px+.
-- **no javascript** — except one line to stamp the current year in the footer.
-- **no images** — zero network requests beyond the two local files.
+- **color palette** — warm-brown background (`--bg #422006`, cards `--bg-card
+  #78350f`), off-white text (`--text #fefce8`, muted `--text-muted #fef08a`),
+  golden-yellow accent (`--border #eab308`, `--accent #facc15`). derived tokens
+  add depth — an ambient `--bg-grad`, an `--accent-glow`, and soft hairline
+  borders (`--border-soft`). the only non-brand hues (`--term-green`,
+  `--term-cyan`) live strictly inside the fake terminal, for syntax realism.
+- **typography** — system font stack (system monospace inside the terminal).
+  `clamp()` for fluid sizing. no external font requests.
+- **layout** — centered column, `max-width: 760px`, with full-bleed `.band`
+  sections that widen to `960px`. the hero is single-column on mobile and a
+  two-column copy + terminal grid at 760px+. features / steps / stats stack on
+  mobile and become three-column grids at 600px+.
+- **product visual** — a css-only "mobile terminal" mockup (markup + css, no
+  image) shows a `git push` → build → deploy flow right in the hero.
+- **minimal javascript** — vanilla, dependency-free: stamps the footer year,
+  toggles the mobile nav, runs the demo waitlist form, and reveals sections on
+  scroll. all progressive-enhancement — every link, the faq, and all content
+  work with javascript disabled — and it respects `prefers-reduced-motion`.
+- **no images** — zero raster images and zero external requests; the favicon is
+  an inline data-uri svg and the product shot is pure css.
 
 ---
 

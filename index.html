@@ -3,53 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="treena — mobile is the dev machine. no laptop." />
-  <title>treena</title>
+  <meta name="description" content="treena — mobile is the dev machine. no laptop. a full terminal, editor, and deploy workflow that runs entirely on your phone." />
+  <meta name="theme-color" content="#422006" />
+
+  <!-- open graph / twitter -->
+  <meta property="og:title" content="treena — mobile is the dev machine. no laptop." />
+  <meta property="og:description" content="a full terminal, editor, and deploy workflow that runs entirely on your phone. no desk required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://treena.dev/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="treena — mobile is the dev machine. no laptop." />
+  <meta name="twitter:description" content="a full terminal, editor, and deploy workflow that runs entirely on your phone." />
+
+  <!-- inline svg favicon — zero network requests -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23422006'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='22' font-weight='bold' text-anchor='middle' fill='%23facc15'%3E%E2%80%BA%3C/text%3E%3C/svg%3E" />
+
+  <title>treena — mobile is the dev machine</title>
+
+  <!-- set .js as early as possible so css can rely on it without a flash -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="top">
   <div class="wrapper">
 
     <header class="site-header">
-      <span class="logo">treena</span>
+      <a href="#top" class="logo">treena</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <a href="#features">features</a>
+        <a href="#how">how it works</a>
+        <a href="#faq">faq</a>
+        <a href="#signup" class="cta cta--sm">get early access</a>
+      </nav>
     </header>
 
-    <main class="hero">
-      <p class="eyebrow">introducing treena</p>
-      <h1 class="headline">
-        mobile is the<br />dev machine.<br />no laptop.
-      </h1>
-      <p class="subline">
-        treena is the environment for developers who build entirely from their
-        phone. real terminal. real editor. real workflow — no desk required.
-      </p>
-      <a href="#" class="cta">get early access</a>
+    <main>
+
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">introducing treena</p>
+          <h1 class="headline">
+            mobile is the<br />dev machine.<br />no laptop.
+          </h1>
+          <p class="subline">
+            treena is the environment for developers who build entirely from their
+            phone. real terminal. real editor. real workflow — no desk required.
+          </p>
+          <div class="hero-actions">
+            <a href="#signup" class="cta">get early access</a>
+            <a href="#how" class="cta cta--ghost">see how it works</a>
+          </div>
+        </div>
+
+        <div class="terminal reveal" role="img" aria-label="a mobile terminal running treena: a git push deploys a project straight from a phone, build passes, and the app goes live.">
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">treena — zsh</span>
+          </div>
+          <div class="terminal-body" aria-hidden="true">
+            <p class="term-line"><span class="term-prompt">~/app ❯</span> git push treena main</p>
+            <p class="term-line term-out">enumerating objects: 24, done.</p>
+            <p class="term-line term-out">compressing &amp; uploading… 100%</p>
+            <p class="term-line term-out term-ok">✓ build passed in 11s</p>
+            <p class="term-line term-out term-ok">✓ deployed to <span class="term-cyan">https://app.treena.dev</span></p>
+            <p class="term-line"><span class="term-prompt">~/app ❯</span> <span class="term-cursor"></span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="feature reveal" style="--i:0">
+          <span class="feature-icon">⌨️</span>
+          <h2>full terminal</h2>
+          <p>ssh, git, npm, python — every tool you rely on, running natively on mobile.</p>
+        </div>
+        <div class="feature reveal" style="--i:1">
+          <span class="feature-icon">📁</span>
+          <h2>real editor</h2>
+          <p>syntax highlighting, multi-file tabs, and a keyboard built for code — not just text.</p>
+        </div>
+        <div class="feature reveal" style="--i:2">
+          <span class="feature-icon">🔗</span>
+          <h2>instant deploy</h2>
+          <p>push to github, trigger pipelines, and preview your work without switching devices.</p>
+        </div>
+      </section>
+
+      <section class="how" id="how">
+        <p class="eyebrow">how it works</p>
+        <h2 class="section-title">three taps from idea to deploy.</h2>
+        <ol class="steps">
+          <li class="step reveal" style="--i:0">
+            <span class="step-num">01</span>
+            <h3>open treena</h3>
+            <p>launch the app — your full environment boots in seconds, with no setup and nothing to install on a desktop.</p>
+          </li>
+          <li class="step reveal" style="--i:1">
+            <span class="step-num">02</span>
+            <h3>write &amp; run</h3>
+            <p>edit across files, run your test suite, hit a real shell — all with a keyboard built for code.</p>
+          </li>
+          <li class="step reveal" style="--i:2">
+            <span class="step-num">03</span>
+            <h3>push &amp; deploy</h3>
+            <p>commit, push to github, and ship to production from the couch. no laptop ever opens.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="proof band">
+        <div class="proof-inner">
+          <figure class="quote reveal">
+            <blockquote>i shipped my last three side projects without opening my laptop once.</blockquote>
+            <figcaption>— a treena early tester</figcaption>
+          </figure>
+          <ul class="stats reveal">
+            <li class="stat">
+              <span class="stat-num">0</span>
+              <span class="stat-label">laptops required</span>
+            </li>
+            <li class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">in your pocket</span>
+            </li>
+            <li class="stat">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">deploys from the couch</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="manifesto">
+        <blockquote>
+          "the laptop was never the point.<br />
+          the code was."
+        </blockquote>
+      </section>
+
+      <section class="faq" id="faq">
+        <p class="eyebrow">faq</p>
+        <h2 class="section-title">questions, answered.</h2>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>do i really need no laptop?</summary>
+            <p>right. treena runs the whole toolchain on your phone — terminal, editor, and deploys. the laptop becomes optional, not required.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>which languages and tools work?</summary>
+            <p>node, python, go, rust, ruby and the usual suspects — plus git, ssh, and your package managers. if it runs in a shell, it runs in treena.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>does it work offline?</summary>
+            <p>editing and local runs work offline; pushes and deploys sync the moment you're back on a connection.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>is my code private?</summary>
+            <p>your code is yours. treena doesn't read it, train on it, or share it.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>when does early access open?</summary>
+            <p>soon. join the waitlist below and we'll ping you the moment your spot is ready.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="signup band" id="signup">
+        <div class="signup-inner reveal">
+          <h2 class="section-title">be first on the dev machine in your pocket.</h2>
+          <p class="subline">join the waitlist — we'll ping you when early access opens.</p>
+          <form class="waitlist" action="#signup" method="post" novalidate>
+            <div class="waitlist-row">
+              <label class="visually-hidden" for="email">email address</label>
+              <input class="waitlist-input" id="email" name="email" type="email"
+                     inputmode="email" autocomplete="email" required
+                     placeholder="you@example.com" aria-describedby="waitlist-note" />
+              <button class="cta" type="submit">get early access</button>
+            </div>
+            <p id="waitlist-note" class="waitlist-note">this is a demo — no email is stored or sent.</p>
+            <p class="waitlist-success" role="status" hidden>✓ you're on the list.</p>
+          </form>
+        </div>
+      </section>
+
     </main>
-
-    <section class="features">
-      <div class="feature">
-        <span class="feature-icon">⌨️</span>
-        <h2>full terminal</h2>
-        <p>ssh, git, npm, python — every tool you rely on, running natively on mobile.</p>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">📁</span>
-        <h2>real editor</h2>
-        <p>syntax highlighting, multi-file tabs, and a keyboard built for code — not just text.</p>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">🔗</span>
-        <h2>instant deploy</h2>
-        <p>push to github, trigger pipelines, and preview your work without switching devices.</p>
-      </div>
-    </section>
-
-    <section class="manifesto">
-      <blockquote>
-        "the laptop was never the point.<br />
-        the code was."
-      </blockquote>
-    </section>
 
     <footer class="site-footer">
       <p>&copy; <span id="year"></span> treena. all rights reserved.</p>
@@ -63,7 +210,66 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      // year stamp
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // mobile nav toggle
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+
+      function closeNav() {
+        header.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          var open = header.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('a')) closeNav();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeNav();
+        });
+      }
+
+      // waitlist demo form
+      var form = document.querySelector('.waitlist');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = form.querySelector('.waitlist-input');
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
+          }
+          form.querySelector('.waitlist-row').hidden = true;
+          form.querySelector('.waitlist-note').hidden = true;
+          form.querySelector('.waitlist-success').hidden = false;
+        });
+      }
+
+      // scroll-reveal — respects reduced-motion, degrades to "everything visible"
+      var reveals = document.querySelectorAll('.reveal');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+      } else {
+        var io = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+        reveals.forEach(function (el) { io.observe(el); });
+      }
+    })();
   </script>
 </body>
 </html>
