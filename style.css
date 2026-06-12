@@ -11,17 +11,17 @@
   --bg-mid:    #0e0e0e;
   --bg-card:   #111111;
   --bg-elev:   #0d0d0d;
-  --border:    #8b5cf6;
-  --border-soft: rgba(139, 92, 246, 0.22);
+  --border:    #3b82f6;
+  --border-soft: rgba(59, 130, 246, 0.22);
   --text:      #ffffff;
   --text-muted:#94a3b8;
-  --accent:    #a855f7;
+  --accent:    #3b82f6;
   --accent-2:  #22d3ee;
-  --accent-hover: #c084fc;
+  --accent-hover: #60a5fa;
 
-  --bg-grad:   radial-gradient(130% 90% at 50% -10%, rgba(139, 92, 246, 0.15) 0%, var(--bg) 65%);
-  --accent-glow: 0 0 0 1px rgba(168, 85, 247, 0.3), 0 8px 32px -8px rgba(168, 85, 247, 0.5);
-  --accent-grad: linear-gradient(135deg, #a855f7, #22d3ee);
+  --bg-grad:   radial-gradient(130% 90% at 50% -10%, rgba(59, 130, 246, 0.15) 0%, var(--bg) 65%);
+  --accent-glow: 0 0 0 1px rgba(59, 130, 246, 0.3), 0 8px 32px -8px rgba(59, 130, 246, 0.5);
+  --accent-grad: linear-gradient(135deg, #3b82f6, #22d3ee);
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
 
   --radius:    10px;
@@ -65,7 +65,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(139, 92, 246, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
@@ -201,8 +201,8 @@ a {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-hover);
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.4);
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.4);
   border-radius: 999px;
   margin-bottom: 1.25rem;
 }
@@ -212,7 +212,7 @@ a {
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #22d3ee 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -282,8 +282,8 @@ a {
   border-radius: var(--radius);
   box-shadow:
     var(--shadow-card),
-    0 0 0 1px rgba(139, 92, 246, 0.2),
-    0 0 60px -10px rgba(139, 92, 246, 0.35),
+    0 0 0 1px rgba(59, 130, 246, 0.2),
+    0 0 60px -10px rgba(59, 130, 246, 0.35),
     0 0 120px -30px rgba(34, 211, 238, 0.2);
   overflow: hidden;
   font-family: var(--mono);
@@ -359,10 +359,10 @@ a {
 .feature:focus-within {
   border-color: transparent;
   background-image: linear-gradient(var(--bg-card), var(--bg-card)),
-    linear-gradient(135deg, #a855f7, #22d3ee);
+    linear-gradient(135deg, #3b82f6, #22d3ee);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: 0 0 30px -8px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 30px -8px rgba(59, 130, 246, 0.4);
 }
 
 .feature-icon {
