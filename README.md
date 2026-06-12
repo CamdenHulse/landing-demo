@@ -57,12 +57,13 @@ landing-demo/
 
 ## design decisions
 
-- **color palette** — warm-brown background (`--bg #422006`, cards `--bg-card
-  #78350f`), off-white text (`--text #fefce8`, muted `--text-muted #fef08a`),
-  golden-yellow accent (`--border #eab308`, `--accent #facc15`). derived tokens
-  add depth — an ambient `--bg-grad`, an `--accent-glow`, and soft hairline
-  borders (`--border-soft`). the only non-brand hues (`--term-green`,
-  `--term-cyan`) live strictly inside the fake terminal, for syntax realism.
+- **color palette** — deep navy background (`--bg #04111f`), blue-black cards
+  (`--bg-card #0a2038`), ice-white text (`--text #f5fbff`, muted
+  `--text-muted #a9bfd3`), and a fading blue accent system (`--border
+  #38bdf8`, `--accent #38bdf8`, `--accent-2 #818cf8`). derived tokens add
+  depth — an ambient `--bg-grad`, an `--accent-glow`, and soft hairline borders
+  (`--border-soft`). terminal colors stay in the same cool blue family with a
+  teal status color for successful commands.
 - **typography** — system font stack (system monospace inside the terminal).
   `clamp()` for fluid sizing. no external font requests.
 - **layout** — centered column, `max-width: 760px`, with full-bleed `.band`
