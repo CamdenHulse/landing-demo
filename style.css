@@ -5,23 +5,62 @@
   padding: 0;
 }
 
+/* ─── dynamic hue property ───────────────────────────────────── */
+@property --accent-hue {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 48;
+}
+
+@keyframes color-cycle {
+  0%   { --accent-hue: 50; }
+  25%  { --accent-hue: 36; }
+  50%  { --accent-hue: 28; }
+  75%  { --accent-hue: 42; }
+  100% { --accent-hue: 50; }
+}
+
+@keyframes headline-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes terminal-pulse {
+  0%, 100% {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.2),
+      0 0 60px -10px hsla(var(--accent-hue), 95%, 48%, 0.35),
+      0 0 120px -30px hsla(calc(var(--accent-hue) - 18), 90%, 52%, 0.24);
+  }
+  50% {
+    box-shadow:
+      var(--shadow-card),
+      0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.45),
+      0 0 90px -10px hsla(var(--accent-hue), 95%, 48%, 0.6),
+      0 0 160px -30px hsla(calc(var(--accent-hue) - 18), 90%, 52%, 0.45);
+  }
+}
+
 /* ─── tokens ─────────────────────────────────────────────────── */
 :root {
-  --bg:        #04111f;
-  --bg-mid:    #071a2f;
-  --bg-card:   #0a2038;
-  --bg-elev:   #0d2946;
-  --border:    #38bdf8;
-  --border-soft: rgba(56, 189, 248, 0.24);
-  --text:      #f5fbff;
-  --text-muted:#a9bfd3;
-  --accent:    #38bdf8;
-  --accent-2:  #818cf8;
-  --accent-hover: #7dd3fc;
+  animation: color-cycle 12s ease-in-out infinite;
 
-  --bg-grad:   radial-gradient(130% 90% at 50% -10%, rgba(14, 165, 233, 0.2) 0%, rgba(59, 130, 246, 0.12) 36%, var(--bg) 68%);
-  --accent-glow: 0 0 0 1px rgba(56, 189, 248, 0.32), 0 8px 32px -8px rgba(59, 130, 246, 0.55);
-  --accent-grad: linear-gradient(135deg, #38bdf8, #60a5fa 52%, #818cf8);
+  --bg:        #0c0b00;
+  --bg-mid:    #141200;
+  --bg-card:   #1c1900;
+  --bg-elev:   #232000;
+  --border:    hsl(var(--accent-hue), 95%, 48%);
+  --border-soft: hsla(var(--accent-hue), 95%, 48%, 0.24);
+  --text:      #fefce8;
+  --text-muted:#a89830;
+  --accent:    hsl(var(--accent-hue), 95%, 48%);
+  --accent-2:  hsl(calc(var(--accent-hue) - 20), 95%, 52%);
+  --accent-hover: hsl(var(--accent-hue), 98%, 62%);
+
+  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 95%, 48%, 0.22) 0%, hsla(var(--accent-hue), 90%, 55%, 0.12) 36%, var(--bg) 68%);
+  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.32), 0 8px 32px -8px hsla(var(--accent-hue), 95%, 48%, 0.55);
+  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 95%, 48%), hsl(calc(var(--accent-hue) + 6), 96%, 58%) 52%, hsl(calc(var(--accent-hue) - 18), 92%, 52%));
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
 
   --radius:    10px;
@@ -35,12 +74,12 @@
   --mono:      ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
 
   /* terminal "screen" */
-  --term-bg:   #061526;
-  --term-bar:  #0b2138;
-  --term-text: #e8f4ff;
-  --term-dim:  #7f9ab4;
-  --term-ok:   #5eead4;
-  --term-accent: #7dd3fc;
+  --term-bg:   #0a0900;
+  --term-bar:  #141200;
+  --term-text: #fef9c3;
+  --term-dim:  #8a7a20;
+  --term-ok:   #86efac;
+  --term-accent: hsl(var(--accent-hue), 98%, 62%);
 }
 
 /* ─── base ───────────────────────────────────────────────────── */
@@ -65,7 +104,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(hsla(var(--accent-hue), 95%, 48%, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
@@ -131,7 +170,7 @@ a {
   gap: 1rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid var(--border);
-  background: rgba(4, 17, 31, 0.86);
+  background: rgba(12, 11, 0, 0.86);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 }
@@ -201,8 +240,8 @@ a {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-hover);
-  background: rgba(56, 189, 248, 0.13);
-  border: 1px solid rgba(56, 189, 248, 0.42);
+  background: hsla(var(--accent-hue), 95%, 48%, 0.13);
+  border: 1px solid hsla(var(--accent-hue), 95%, 48%, 0.42);
   border-radius: 999px;
   margin-bottom: 1.25rem;
 }
@@ -212,7 +251,16 @@ a {
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #f5fbff 0%, #7dd3fc 48%, #818cf8 100%);
+  background: linear-gradient(
+    135deg,
+    #fefce8 0%,
+    hsl(var(--accent-hue), 96%, 58%) 25%,
+    hsl(calc(var(--accent-hue) - 18), 92%, 52%) 55%,
+    #fefce8 80%,
+    hsl(var(--accent-hue), 96%, 58%) 100%
+  );
+  background-size: 200% 100%;
+  animation: headline-flow 8s ease-in-out infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -236,7 +284,7 @@ a {
 .cta {
   display: inline-block;
   background: var(--accent-grad);
-  color: #03101d;
+  color: #1a1600;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -280,11 +328,7 @@ a {
   background: var(--term-bg);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
-  box-shadow:
-    var(--shadow-card),
-    0 0 0 1px rgba(56, 189, 248, 0.2),
-    0 0 60px -10px rgba(56, 189, 248, 0.35),
-    0 0 120px -30px rgba(129, 140, 248, 0.24);
+  animation: terminal-pulse 4s ease-in-out infinite;
   overflow: hidden;
   font-family: var(--mono);
 }
@@ -359,10 +403,10 @@ a {
 .feature:focus-within {
   border-color: transparent;
   background-image: linear-gradient(var(--bg-card), var(--bg-card)),
-    linear-gradient(135deg, #38bdf8, #818cf8);
+    var(--accent-grad);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: 0 0 30px -8px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 95%, 48%, 0.4);
 }
 
 .feature-icon {
