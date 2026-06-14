@@ -9,15 +9,15 @@
 @property --accent-hue {
   syntax: '<number>';
   inherits: true;
-  initial-value: 28;
+  initial-value: 148;
 }
 
 @keyframes color-cycle {
-  0%   { --accent-hue: 28; }
-  25%  { --accent-hue: 20; }
-  50%  { --accent-hue: 18; }
-  75%  { --accent-hue: 24; }
-  100% { --accent-hue: 28; }
+  0%   { --accent-hue: 138; }
+  28%  { --accent-hue: 154; }
+  58%  { --accent-hue: 170; }
+  82%  { --accent-hue: 128; }
+  100% { --accent-hue: 138; }
 }
 
 @keyframes headline-flow {
@@ -29,16 +29,16 @@
   0%, 100% {
     box-shadow:
       var(--shadow-card),
-      0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.2),
-      0 0 60px -10px hsla(var(--accent-hue), 95%, 48%, 0.35),
-      0 0 120px -30px hsla(calc(var(--accent-hue) - 18), 90%, 52%, 0.24);
+      0 0 0 1px hsla(var(--accent-hue), 88%, 48%, 0.2),
+      0 0 60px -10px hsla(var(--accent-hue), 88%, 48%, 0.34),
+      0 0 120px -30px hsla(calc(var(--accent-hue) + 26), 82%, 48%, 0.24);
   }
   50% {
     box-shadow:
       var(--shadow-card),
-      0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.45),
-      0 0 90px -10px hsla(var(--accent-hue), 95%, 48%, 0.6),
-      0 0 160px -30px hsla(calc(var(--accent-hue) - 18), 90%, 52%, 0.45);
+      0 0 0 1px hsla(var(--accent-hue), 88%, 48%, 0.45),
+      0 0 90px -10px hsla(var(--accent-hue), 88%, 48%, 0.58),
+      0 0 160px -30px hsla(calc(var(--accent-hue) + 26), 82%, 48%, 0.42);
   }
 }
 
@@ -46,21 +46,21 @@
 :root {
   animation: color-cycle 12s ease-in-out infinite;
 
-  --bg:        #0c0500;
-  --bg-mid:    #120700;
-  --bg-card:   #1a0a00;
-  --bg-elev:   #220d00;
-  --border:    hsl(var(--accent-hue), 95%, 48%);
-  --border-soft: hsla(var(--accent-hue), 95%, 48%, 0.24);
-  --text:      #fefce8;
-  --text-muted:#a06020;
-  --accent:    hsl(var(--accent-hue), 95%, 48%);
-  --accent-2:  hsl(calc(var(--accent-hue) - 20), 95%, 52%);
-  --accent-hover: hsl(var(--accent-hue), 98%, 62%);
+  --bg:        #03140b;
+  --bg-mid:    #062016;
+  --bg-card:   #09271b;
+  --bg-elev:   #0d3525;
+  --border:    hsl(var(--accent-hue), 82%, 48%);
+  --border-soft: hsla(var(--accent-hue), 82%, 48%, 0.26);
+  --text:      #f2fff8;
+  --text-muted:#93b6a4;
+  --accent:    hsl(var(--accent-hue), 82%, 48%);
+  --accent-2:  hsl(calc(var(--accent-hue) + 28), 86%, 48%);
+  --accent-hover: hsl(var(--accent-hue), 92%, 64%);
 
-  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 95%, 48%, 0.22) 0%, hsla(var(--accent-hue), 90%, 55%, 0.12) 36%, var(--bg) 68%);
-  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.32), 0 8px 32px -8px hsla(var(--accent-hue), 95%, 48%, 0.55);
-  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 95%, 48%), hsl(calc(var(--accent-hue) + 6), 96%, 58%) 52%, hsl(calc(var(--accent-hue) - 18), 92%, 52%));
+  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 82%, 48%, 0.22) 0%, hsla(calc(var(--accent-hue) + 28), 84%, 46%, 0.13) 38%, var(--bg) 70%);
+  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 82%, 48%, 0.34), 0 8px 32px -8px hsla(var(--accent-hue), 82%, 48%, 0.55);
+  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 82%, 48%), hsl(calc(var(--accent-hue) + 18), 86%, 55%) 52%, hsl(calc(var(--accent-hue) + 36), 80%, 46%));
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
 
   --radius:    10px;
@@ -74,12 +74,12 @@
   --mono:      ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
 
   /* terminal "screen" */
-  --term-bg:   #0a0400;
-  --term-bar:  #130600;
-  --term-text: #fff0d0;
-  --term-dim:  #7a4a10;
+  --term-bg:   #021007;
+  --term-bar:  #052016;
+  --term-text: #dcffe9;
+  --term-dim:  #6c9f82;
   --term-ok:   #86efac;
-  --term-accent: hsl(var(--accent-hue), 98%, 62%);
+  --term-accent: hsl(var(--accent-hue), 92%, 64%);
 }
 
 /* ─── base ───────────────────────────────────────────────────── */
@@ -104,7 +104,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(hsla(var(--accent-hue), 95%, 48%, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(hsla(var(--accent-hue), 82%, 48%, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
@@ -151,10 +151,10 @@ a {
 
 /* shared section kickers */
 .section-title {
-  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--text);
   margin-bottom: 2rem;
 }
@@ -170,7 +170,7 @@ a {
   gap: 1rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid var(--border);
-  background: rgba(12, 11, 0, 0.86);
+  background: rgba(3, 20, 11, 0.86);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 }
@@ -178,7 +178,7 @@ a {
 .logo {
   font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: lowercase;
   color: var(--accent);
 }
@@ -237,27 +237,27 @@ a {
   padding: 0.25rem 0.8rem;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--accent-hover);
-  background: hsla(var(--accent-hue), 95%, 48%, 0.13);
-  border: 1px solid hsla(var(--accent-hue), 95%, 48%, 0.42);
+  background: hsla(var(--accent-hue), 82%, 48%, 0.13);
+  border: 1px solid hsla(var(--accent-hue), 82%, 48%, 0.42);
   border-radius: 999px;
   margin-bottom: 1.25rem;
 }
 
 .headline {
-  font-size: clamp(2.4rem, 10vw, 4.5rem);
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   background: linear-gradient(
     135deg,
-    #fefce8 0%,
-    hsl(var(--accent-hue), 96%, 58%) 25%,
-    hsl(calc(var(--accent-hue) - 18), 92%, 52%) 55%,
-    #fefce8 80%,
-    hsl(var(--accent-hue), 96%, 58%) 100%
+    var(--text) 0%,
+    hsl(var(--accent-hue), 88%, 58%) 25%,
+    hsl(calc(var(--accent-hue) + 28), 84%, 52%) 55%,
+    var(--text) 80%,
+    hsl(var(--accent-hue), 88%, 58%) 100%
   );
   background-size: 200% 100%;
   animation: headline-flow 8s ease-in-out infinite;
@@ -268,7 +268,7 @@ a {
 }
 
 .subline {
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-size: 1.08rem;
   color: var(--text-muted);
   max-width: 520px;
   line-height: 1.7;
@@ -284,10 +284,10 @@ a {
 .cta {
   display: inline-block;
   background: var(--accent-grad);
-  color: #1a1600;
+  color: #021007;
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   padding: 0.85rem 2rem;
   border: 1px solid transparent;
   border-radius: var(--radius);
@@ -350,7 +350,7 @@ a {
   opacity: 0.7;
 }
 
-.terminal-dot:nth-child(1) { background: #e05a10; }
+.terminal-dot:nth-child(1) { background: #22c55e; }
 .terminal-dot:nth-child(2) { background: var(--accent); }
 .terminal-dot:nth-child(3) { background: var(--term-ok); }
 
@@ -364,7 +364,7 @@ a {
 
 .terminal-body {
   padding: 0.95rem 1.05rem 1.2rem;
-  font-size: clamp(0.72rem, 2.4vw, 0.85rem);
+  font-size: 0.74rem;
   line-height: 1.8;
   color: var(--term-text);
 }
@@ -406,7 +406,7 @@ a {
     var(--accent-grad);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 95%, 48%, 0.4);
+  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 82%, 48%, 0.4);
 }
 
 .feature-icon {
@@ -424,7 +424,7 @@ a {
 .feature h2 {
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   margin-bottom: 0.5rem;
   color: var(--text);
 }
@@ -494,7 +494,7 @@ a {
 
 .quote blockquote {
   position: relative;
-  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--text);
@@ -520,7 +520,7 @@ a {
 
 .stat-num {
   display: block;
-  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-size: 2.3rem;
   font-weight: 800;
   background: var(--accent-grad);
   -webkit-background-clip: text;
@@ -533,7 +533,7 @@ a {
   display: block;
   margin-top: 0.45rem;
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -548,7 +548,7 @@ a {
 }
 
 .manifesto blockquote {
-  font-size: clamp(1.15rem, 4vw, 1.6rem);
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--text);
@@ -714,6 +714,27 @@ a {
 
 /* ─── breakpoint: 600px+ ─────────────────────────────────────── */
 @media (min-width: 600px) {
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  .headline {
+    font-size: 4.5rem;
+  }
+
+  .terminal-body {
+    font-size: 0.85rem;
+  }
+
+  .quote blockquote,
+  .manifesto blockquote {
+    font-size: 1.6rem;
+  }
+
+  .stat-num {
+    font-size: 2.6rem;
+  }
+
   .features {
     grid-template-columns: repeat(3, 1fr);
   }
