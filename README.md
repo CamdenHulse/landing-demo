@@ -57,15 +57,15 @@ landing-demo/
 
 ## design decisions
 
-- **color palette** — deep navy background (`--bg #04111f`), blue-black cards
-  (`--bg-card #0a2038`), ice-white text (`--text #f5fbff`, muted
-  `--text-muted #a9bfd3`), and a fading blue accent system (`--border
-  #38bdf8`, `--accent #38bdf8`, `--accent-2 #818cf8`). derived tokens add
-  depth — an ambient `--bg-grad`, an `--accent-glow`, and soft hairline borders
-  (`--border-soft`). terminal colors stay in the same cool blue family with a
-  teal status color for successful commands.
-- **typography** — system font stack (system monospace inside the terminal).
-  `clamp()` for fluid sizing. no external font requests.
+- **color palette** — deep green-black background (`--bg #03140b`), elevated
+  forest panels (`--bg-card #09271b`), mint-white text (`--text #f2fff8`, muted
+  `--text-muted #93b6a4`), and a dynamic green-to-teal accent system driven by
+  `--accent-hue`. derived tokens add motion and depth — an ambient `--bg-grad`,
+  an `--accent-glow`, soft hairline borders (`--border-soft`), animated headline
+  color, and a pulsing terminal glow. terminal colors stay in the green family
+  with mint status output for successful commands.
+- **typography** — system font stack (system monospace inside the terminal),
+  with breakpoint-based type sizes and no external font requests.
 - **layout** — centered column, `max-width: 760px`, with full-bleed `.band`
   sections that widen to `960px`. the hero is single-column on mobile and a
   two-column copy + terminal grid at 760px+. features / steps / stats stack on
@@ -85,12 +85,12 @@ landing-demo/
 
 1. edit `index.html` or `style.css` directly — no compile step needed.
 2. refresh the browser to see changes immediately.
-3. commit and push:
+3. commit, push a branch, and open a pull request:
 
 ```bash
 git add index.html style.css README.md
 git commit -m "describe your change here"
-git push origin main
+git push origin your-branch
 ```
 
 ---
