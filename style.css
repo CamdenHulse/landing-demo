@@ -9,15 +9,15 @@
 @property --accent-hue {
   syntax: '<number>';
   inherits: true;
-  initial-value: 28;
+  initial-value: 30;
 }
 
 @keyframes color-cycle {
-  0%   { --accent-hue: 28; }
-  25%  { --accent-hue: 20; }
-  50%  { --accent-hue: 18; }
-  75%  { --accent-hue: 24; }
-  100% { --accent-hue: 28; }
+  0%   { --accent-hue: 30; }
+  25%  { --accent-hue: 24; }
+  50%  { --accent-hue: 35; }
+  75%  { --accent-hue: 28; }
+  100% { --accent-hue: 30; }
 }
 
 @keyframes headline-flow {
@@ -29,16 +29,16 @@
   0%, 100% {
     box-shadow:
       var(--shadow-card),
-      0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.2),
-      0 0 60px -10px hsla(var(--accent-hue), 95%, 48%, 0.35),
-      0 0 120px -30px hsla(calc(var(--accent-hue) - 18), 90%, 52%, 0.24);
+      0 0 0 1px hsla(var(--accent-hue), 100%, 60%, 0.2),
+      0 0 60px -10px hsla(var(--accent-hue), 100%, 60%, 0.35),
+      0 0 120px -30px hsla(calc(var(--accent-hue) - 18), 90%, 62%, 0.24);
   }
   50% {
     box-shadow:
       var(--shadow-card),
-      0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.45),
-      0 0 90px -10px hsla(var(--accent-hue), 95%, 48%, 0.6),
-      0 0 160px -30px hsla(calc(var(--accent-hue) - 18), 90%, 52%, 0.45);
+      0 0 0 1px hsla(var(--accent-hue), 100%, 60%, 0.45),
+      0 0 90px -10px hsla(var(--accent-hue), 100%, 60%, 0.6),
+      0 0 160px -30px hsla(calc(var(--accent-hue) - 18), 90%, 62%, 0.45);
   }
 }
 
@@ -50,17 +50,17 @@
   --bg-mid:    #120700;
   --bg-card:   #1a0a00;
   --bg-elev:   #220d00;
-  --border:    hsl(var(--accent-hue), 95%, 48%);
-  --border-soft: hsla(var(--accent-hue), 95%, 48%, 0.24);
+  --border:    hsl(var(--accent-hue), 100%, 60%);
+  --border-soft: hsla(var(--accent-hue), 100%, 60%, 0.24);
   --text:      #fefce8;
-  --text-muted:#a06020;
-  --accent:    hsl(var(--accent-hue), 95%, 48%);
-  --accent-2:  hsl(calc(var(--accent-hue) - 20), 95%, 52%);
-  --accent-hover: hsl(var(--accent-hue), 98%, 62%);
+  --text-muted:#c07840;
+  --accent:    hsl(var(--accent-hue), 100%, 60%);
+  --accent-2:  hsl(calc(var(--accent-hue) + 12), 95%, 62%);
+  --accent-hover: hsl(var(--accent-hue), 100%, 70%);
 
-  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 95%, 48%, 0.22) 0%, hsla(var(--accent-hue), 90%, 55%, 0.12) 36%, var(--bg) 68%);
-  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 95%, 48%, 0.32), 0 8px 32px -8px hsla(var(--accent-hue), 95%, 48%, 0.55);
-  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 95%, 48%), hsl(calc(var(--accent-hue) + 6), 96%, 58%) 52%, hsl(calc(var(--accent-hue) - 18), 92%, 52%));
+  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 100%, 60%, 0.22) 0%, hsla(var(--accent-hue), 90%, 65%, 0.12) 36%, var(--bg) 68%);
+  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 100%, 60%, 0.32), 0 8px 32px -8px hsla(var(--accent-hue), 100%, 60%, 0.55);
+  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 100%, 60%), hsl(calc(var(--accent-hue) + 6), 96%, 70%) 52%, hsl(calc(var(--accent-hue) - 18), 92%, 62%));
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
 
   --radius:    10px;
@@ -77,9 +77,9 @@
   --term-bg:   #0a0400;
   --term-bar:  #130600;
   --term-text: #fff0d0;
-  --term-dim:  #7a4a10;
+  --term-dim:  #a06020;
   --term-ok:   #86efac;
-  --term-accent: hsl(var(--accent-hue), 98%, 62%);
+  --term-accent: hsl(var(--accent-hue), 100%, 68%);
 }
 
 /* ─── base ───────────────────────────────────────────────────── */
@@ -350,7 +350,7 @@ a {
   opacity: 0.7;
 }
 
-.terminal-dot:nth-child(1) { background: #e05a10; }
+.terminal-dot:nth-child(1) { background: #ff6400; }
 .terminal-dot:nth-child(2) { background: var(--accent); }
 .terminal-dot:nth-child(3) { background: var(--term-ok); }
 
