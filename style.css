@@ -9,15 +9,15 @@
 @property --accent-hue {
   syntax: '<number>';
   inherits: true;
-  initial-value: 148;
+  initial-value: 30;
 }
 
 @keyframes color-cycle {
-  0%   { --accent-hue: 138; }
-  28%  { --accent-hue: 154; }
-  58%  { --accent-hue: 170; }
-  82%  { --accent-hue: 128; }
-  100% { --accent-hue: 138; }
+  0%   { --accent-hue: 30; }
+  25%  { --accent-hue: 24; }
+  50%  { --accent-hue: 35; }
+  75%  { --accent-hue: 28; }
+  100% { --accent-hue: 30; }
 }
 
 @keyframes headline-flow {
@@ -29,16 +29,16 @@
   0%, 100% {
     box-shadow:
       var(--shadow-card),
-      0 0 0 1px hsla(var(--accent-hue), 88%, 48%, 0.2),
-      0 0 60px -10px hsla(var(--accent-hue), 88%, 48%, 0.34),
-      0 0 120px -30px hsla(calc(var(--accent-hue) + 26), 82%, 48%, 0.24);
+      0 0 0 1px hsla(var(--accent-hue), 100%, 60%, 0.2),
+      0 0 60px -10px hsla(var(--accent-hue), 100%, 60%, 0.35),
+      0 0 120px -30px hsla(calc(var(--accent-hue) - 18), 90%, 62%, 0.24);
   }
   50% {
     box-shadow:
       var(--shadow-card),
-      0 0 0 1px hsla(var(--accent-hue), 88%, 48%, 0.45),
-      0 0 90px -10px hsla(var(--accent-hue), 88%, 48%, 0.58),
-      0 0 160px -30px hsla(calc(var(--accent-hue) + 26), 82%, 48%, 0.42);
+      0 0 0 1px hsla(var(--accent-hue), 100%, 60%, 0.45),
+      0 0 90px -10px hsla(var(--accent-hue), 100%, 60%, 0.6),
+      0 0 160px -30px hsla(calc(var(--accent-hue) - 18), 90%, 62%, 0.45);
   }
 }
 
@@ -46,21 +46,21 @@
 :root {
   animation: color-cycle 12s ease-in-out infinite;
 
-  --bg:        #03140b;
-  --bg-mid:    #062016;
-  --bg-card:   #09271b;
-  --bg-elev:   #0d3525;
-  --border:    hsl(var(--accent-hue), 82%, 48%);
-  --border-soft: hsla(var(--accent-hue), 82%, 48%, 0.26);
-  --text:      #f2fff8;
-  --text-muted:#93b6a4;
-  --accent:    hsl(var(--accent-hue), 82%, 48%);
-  --accent-2:  hsl(calc(var(--accent-hue) + 28), 86%, 48%);
-  --accent-hover: hsl(var(--accent-hue), 92%, 64%);
+  --bg:        #0c0500;
+  --bg-mid:    #120700;
+  --bg-card:   #1a0a00;
+  --bg-elev:   #220d00;
+  --border:    hsl(var(--accent-hue), 100%, 60%);
+  --border-soft: hsla(var(--accent-hue), 100%, 60%, 0.24);
+  --text:      #fefce8;
+  --text-muted:#c07840;
+  --accent:    hsl(var(--accent-hue), 100%, 60%);
+  --accent-2:  hsl(calc(var(--accent-hue) + 12), 95%, 62%);
+  --accent-hover: hsl(var(--accent-hue), 100%, 70%);
 
-  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 82%, 48%, 0.22) 0%, hsla(calc(var(--accent-hue) + 28), 84%, 46%, 0.13) 38%, var(--bg) 70%);
-  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 82%, 48%, 0.34), 0 8px 32px -8px hsla(var(--accent-hue), 82%, 48%, 0.55);
-  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 82%, 48%), hsl(calc(var(--accent-hue) + 18), 86%, 55%) 52%, hsl(calc(var(--accent-hue) + 36), 80%, 46%));
+  --bg-grad:   radial-gradient(130% 90% at 50% -10%, hsla(var(--accent-hue), 100%, 60%, 0.22) 0%, hsla(var(--accent-hue), 90%, 65%, 0.12) 36%, var(--bg) 68%);
+  --accent-glow: 0 0 0 1px hsla(var(--accent-hue), 100%, 60%, 0.32), 0 8px 32px -8px hsla(var(--accent-hue), 100%, 60%, 0.55);
+  --accent-grad: linear-gradient(135deg, hsl(var(--accent-hue), 100%, 60%), hsl(calc(var(--accent-hue) + 6), 96%, 70%) 52%, hsl(calc(var(--accent-hue) - 18), 92%, 62%));
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 30px -18px rgba(0, 0, 0, 0.7);
 
   --radius:    10px;
@@ -74,12 +74,12 @@
   --mono:      ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
 
   /* terminal "screen" */
-  --term-bg:   #021007;
-  --term-bar:  #052016;
-  --term-text: #dcffe9;
-  --term-dim:  #6c9f82;
+  --term-bg:   #0a0400;
+  --term-bar:  #130600;
+  --term-text: #fff0d0;
+  --term-dim:  #a06020;
   --term-ok:   #86efac;
-  --term-accent: hsl(var(--accent-hue), 92%, 64%);
+  --term-accent: hsl(var(--accent-hue), 100%, 68%);
 }
 
 /* ─── base ───────────────────────────────────────────────────── */
@@ -104,7 +104,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(hsla(var(--accent-hue), 82%, 48%, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(hsla(var(--accent-hue), 100%, 60%, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
@@ -170,7 +170,7 @@ a {
   gap: 1rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid var(--border);
-  background: rgba(3, 20, 11, 0.86);
+  background: rgba(12, 5, 0, 0.86);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 }
@@ -240,8 +240,8 @@ a {
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--accent-hover);
-  background: hsla(var(--accent-hue), 82%, 48%, 0.13);
-  border: 1px solid hsla(var(--accent-hue), 82%, 48%, 0.42);
+  background: hsla(var(--accent-hue), 100%, 60%, 0.13);
+  border: 1px solid hsla(var(--accent-hue), 100%, 60%, 0.42);
   border-radius: 999px;
   margin-bottom: 1.25rem;
 }
@@ -254,10 +254,10 @@ a {
   background: linear-gradient(
     135deg,
     var(--text) 0%,
-    hsl(var(--accent-hue), 88%, 58%) 25%,
-    hsl(calc(var(--accent-hue) + 28), 84%, 52%) 55%,
+    hsl(var(--accent-hue), 100%, 66%) 25%,
+    hsl(calc(var(--accent-hue) - 18), 92%, 62%) 55%,
     var(--text) 80%,
-    hsl(var(--accent-hue), 88%, 58%) 100%
+    hsl(var(--accent-hue), 100%, 66%) 100%
   );
   background-size: 200% 100%;
   animation: headline-flow 8s ease-in-out infinite;
@@ -284,7 +284,7 @@ a {
 .cta {
   display: inline-block;
   background: var(--accent-grad);
-  color: #021007;
+  color: #1a0a00;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -350,7 +350,7 @@ a {
   opacity: 0.7;
 }
 
-.terminal-dot:nth-child(1) { background: #22c55e; }
+.terminal-dot:nth-child(1) { background: #ff6400; }
 .terminal-dot:nth-child(2) { background: var(--accent); }
 .terminal-dot:nth-child(3) { background: var(--term-ok); }
 
@@ -406,7 +406,7 @@ a {
     var(--accent-grad);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 82%, 48%, 0.4);
+  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 100%, 60%, 0.4);
 }
 
 .feature-icon {

@@ -57,13 +57,13 @@ landing-demo/
 
 ## design decisions
 
-- **color palette** — deep green-black background (`--bg #03140b`), elevated
-  forest panels (`--bg-card #09271b`), mint-white text (`--text #f2fff8`, muted
-  `--text-muted #93b6a4`), and a dynamic green-to-teal accent system driven by
+- **color palette** — deep ember-black background (`--bg #0c0500`), elevated
+  burnt-orange panels (`--bg-card #1a0a00`), warm ivory text (`--text #fefce8`,
+  muted `--text-muted #c07840`), and a vivid orange accent system driven by
   `--accent-hue`. derived tokens add motion and depth — an ambient `--bg-grad`,
   an `--accent-glow`, soft hairline borders (`--border-soft`), animated headline
-  color, and a pulsing terminal glow. terminal colors stay in the green family
-  with mint status output for successful commands.
+  color, and a pulsing terminal glow. terminal colors stay in the warm orange
+  family with green status output for successful commands.
 - **typography** — system font stack (system monospace inside the terminal),
   with breakpoint-based type sizes and no external font requests.
 - **layout** — centered column, `max-width: 760px`, with full-bleed `.band`
