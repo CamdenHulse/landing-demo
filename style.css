@@ -104,7 +104,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(hsla(var(--accent-hue), 95%, 48%, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(hsla(var(--accent-hue), 100%, 60%, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
@@ -151,10 +151,10 @@ a {
 
 /* shared section kickers */
 .section-title {
-  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--text);
   margin-bottom: 2rem;
 }
@@ -170,7 +170,7 @@ a {
   gap: 1rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid var(--border);
-  background: rgba(12, 11, 0, 0.86);
+  background: rgba(12, 5, 0, 0.86);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 }
@@ -178,7 +178,7 @@ a {
 .logo {
   font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: lowercase;
   color: var(--accent);
 }
@@ -237,27 +237,27 @@ a {
   padding: 0.25rem 0.8rem;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--accent-hover);
-  background: hsla(var(--accent-hue), 95%, 48%, 0.13);
-  border: 1px solid hsla(var(--accent-hue), 95%, 48%, 0.42);
+  background: hsla(var(--accent-hue), 100%, 60%, 0.13);
+  border: 1px solid hsla(var(--accent-hue), 100%, 60%, 0.42);
   border-radius: 999px;
   margin-bottom: 1.25rem;
 }
 
 .headline {
-  font-size: clamp(2.4rem, 10vw, 4.5rem);
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   background: linear-gradient(
     135deg,
-    #fefce8 0%,
-    hsl(var(--accent-hue), 96%, 58%) 25%,
-    hsl(calc(var(--accent-hue) - 18), 92%, 52%) 55%,
-    #fefce8 80%,
-    hsl(var(--accent-hue), 96%, 58%) 100%
+    var(--text) 0%,
+    hsl(var(--accent-hue), 100%, 66%) 25%,
+    hsl(calc(var(--accent-hue) - 18), 92%, 62%) 55%,
+    var(--text) 80%,
+    hsl(var(--accent-hue), 100%, 66%) 100%
   );
   background-size: 200% 100%;
   animation: headline-flow 8s ease-in-out infinite;
@@ -268,7 +268,7 @@ a {
 }
 
 .subline {
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-size: 1.08rem;
   color: var(--text-muted);
   max-width: 520px;
   line-height: 1.7;
@@ -284,10 +284,10 @@ a {
 .cta {
   display: inline-block;
   background: var(--accent-grad);
-  color: #1a1600;
+  color: #1a0a00;
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   padding: 0.85rem 2rem;
   border: 1px solid transparent;
   border-radius: var(--radius);
@@ -364,7 +364,7 @@ a {
 
 .terminal-body {
   padding: 0.95rem 1.05rem 1.2rem;
-  font-size: clamp(0.72rem, 2.4vw, 0.85rem);
+  font-size: 0.74rem;
   line-height: 1.8;
   color: var(--term-text);
 }
@@ -406,7 +406,7 @@ a {
     var(--accent-grad);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 95%, 48%, 0.4);
+  box-shadow: 0 0 30px -8px hsla(var(--accent-hue), 100%, 60%, 0.4);
 }
 
 .feature-icon {
@@ -424,7 +424,7 @@ a {
 .feature h2 {
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   margin-bottom: 0.5rem;
   color: var(--text);
 }
@@ -494,7 +494,7 @@ a {
 
 .quote blockquote {
   position: relative;
-  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--text);
@@ -520,7 +520,7 @@ a {
 
 .stat-num {
   display: block;
-  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-size: 2.3rem;
   font-weight: 800;
   background: var(--accent-grad);
   -webkit-background-clip: text;
@@ -533,7 +533,7 @@ a {
   display: block;
   margin-top: 0.45rem;
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -548,7 +548,7 @@ a {
 }
 
 .manifesto blockquote {
-  font-size: clamp(1.15rem, 4vw, 1.6rem);
+  font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.5;
   color: var(--text);
@@ -714,6 +714,27 @@ a {
 
 /* ─── breakpoint: 600px+ ─────────────────────────────────────── */
 @media (min-width: 600px) {
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  .headline {
+    font-size: 4.5rem;
+  }
+
+  .terminal-body {
+    font-size: 0.85rem;
+  }
+
+  .quote blockquote,
+  .manifesto blockquote {
+    font-size: 1.6rem;
+  }
+
+  .stat-num {
+    font-size: 2.6rem;
+  }
+
   .features {
     grid-template-columns: repeat(3, 1fr);
   }
